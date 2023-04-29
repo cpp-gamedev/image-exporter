@@ -1,5 +1,4 @@
-#ifndef EXPORT_H_
-#define EXPORT_H_
+#pragma once
 
 #include <vector>
 #include <span>
@@ -10,12 +9,12 @@ using std::uint32_t;
 
 struct Rgba
 {
-	uint8_t r, g, b, a;
+	uint8_t r{0}, g{0}, b{0}, a{0};
 };
 
 struct Extent
 {
-	uint32_t w, h;
+	uint32_t width{0}, height{0};
 };
 
 struct Image
@@ -24,6 +23,4 @@ struct Image
 	Extent extent;
 };
 
-Image upscale(std::span<Rgba> input, Extent extent);
-
-#endif /* EXPORT_H_ */
+Image upscale(std::span<Rgba const> input, uint32_t scale);

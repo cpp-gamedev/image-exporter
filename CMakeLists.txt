@@ -9,6 +9,7 @@ project(image-exporter)
 add_executable(${PROJECT_NAME})
 target_sources(${PROJECT_NAME} PRIVATE
   src/main.cpp
+  src/export.cpp
 )
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL Clang OR CMAKE_CXX_COMPILER_ID STREQUAL GNU)

@@ -35,7 +35,7 @@ constexpr uint32_t Rgba::to_hex(const Rgba &rgba)
 /* Implementation of Image */
 Image::Image(uint32_t width, uint32_t height)
 	:extent{width, height},
-	 pixels(width * height, Rgba{0})
+	 pixels(width * height, Rgba(0))
 {
 }
 

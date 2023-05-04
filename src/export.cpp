@@ -1,5 +1,8 @@
 #include <cstdlib>
 #include <iostream>
+#include <string>
+#include <fstream>
+
 #include "export.h"
 
 /* Implementation of Rgba */
@@ -19,10 +22,6 @@ Rgba::Rgba(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 {
 }
 
-Rgba::~Rgba()
-{
-}
-
 constexpr uint32_t Rgba::to_hex(const Rgba &rgba)
 {
 	return ((rgba.r << 24) | 
@@ -35,12 +34,8 @@ constexpr uint32_t Rgba::to_hex(const Rgba &rgba)
 
 /* Implementation of Image */
 Image::Image(uint32_t width, uint32_t height)
-{
-	this->extent = Extent{width, height};
-	this->pixels = std::vector<Rgba>(width * height, Rgba{0});
-}
-
-Image::~Image()
+	:extent{width, height},
+	 pixels(width * height, Rgba{0})
 {
 }
 

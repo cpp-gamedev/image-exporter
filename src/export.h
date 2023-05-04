@@ -3,7 +3,6 @@
 #include <vector>
 #include <cstdint>
 #include <string>
-#include <fstream>
 
 using std::uint8_t;
 using std::uint32_t;

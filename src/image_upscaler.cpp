@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 
-#include "export.h"
+#include <image_upscaler/image_upscaler.hpp>
 
 /* Implementation of Rgba */
 Rgba::Rgba(uint32_t hex)

@@ -15,6 +15,11 @@ target_sources(${PROJECT_NAME} PRIVATE
   include/image_upscaler/image_upscaler.hpp
   src/image_upscaler.cpp
   )
+
+if(IMAGE_UPSCALE_TEST)
+    add_subdirectory(tests)
+endif()
+
 if(CMAKE_CXX_COMPILER_ID STREQUAL Clang OR CMAKE_CXX_COMPILER_ID STREQUAL GNU)
   target_compile_options(${PROJECT_NAME} PRIVATE
     -Wall -Wextra -Wpedantic -Wconversion -Werror=return-type 

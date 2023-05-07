@@ -6,7 +6,7 @@
 #include <image_upscaler/image_upscaler.hpp>
 
 /* Implementation of Rgba */
-Rgba::Rgba(uint32_t hex) : r((hex & 0xFF'00'00'00) >> 24), g((hex & 0x00'FF'00'00) >> 16), b((hex & 0x00'00'FF'00) >> 8), a(hex & 0x00'00'00'FF) {}
+Rgba::Rgba(uint32_t hex) : r(static_cast<uint8_t>((hex & 0xFF'00'00'00) >> 24)), g(static_cast<uint8_t>((hex & 0x00'FF'00'00) >> 16)), b(static_cast<uint8_t>((hex & 0x00'00'FF'00) >> 8)), a(static_cast<uint8_t>(hex & 0x00'00'00'FF)) {}
 
 Rgba::Rgba(uint8_t r, uint8_t g, uint8_t b, uint8_t a) : r(r), g(g), b(b), a(a) {}
 

@@ -17,6 +17,7 @@ target_sources(${PROJECT_NAME} PRIVATE
   )
 
 if(IMAGE_UPSCALE_TEST)
+    enable_testing()
     add_subdirectory(tests)
 endif()
 
